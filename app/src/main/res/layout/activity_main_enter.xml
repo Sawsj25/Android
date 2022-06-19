@@ -4,39 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/root_layout"
+        android:background="@drawable/gradient_start"
     android:orientation="vertical"
     tools:context=".MainActivity">
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidlineenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="0.30pt"
+        android:orientation="horizontal"
+app:layout_constraintGuide_percent="0.33"
         />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidlineexit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" />
+        android:layout_height="1dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintGuide_percent="0.66"
+        android:orientation="horizontal" />
+
     <Button
-        android:id="@+id/btnenter"
+        android:id="@+id/enterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/guidlineenter"
-        app:layout_constraintLeft_toLeftOf="@id/guidlineenter"
-        app:layout_constraintRight_toRightOf="@id/guidlineenter"
-        app:layout_constraintBottom_toBottomOf="@id/guidlineenter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Enter"
         />
 
     <Button
-        android:id="@+id/btnexit"
-        android:layout_width="6dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/guidlineexit"
-        app:layout_constraintLeft_toLeftOf="@id/guidlineexit"
-        app:layout_constraintRight_toRightOf="@id/guidlineexit"
+        android:id="@+id/exitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/guidlineexit" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
